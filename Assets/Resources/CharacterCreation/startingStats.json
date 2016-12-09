@@ -1,0 +1,38 @@
+{
+    "startingPoints": 10,
+    "startingStats": [
+        {
+            "class": "warrior",
+            "stats": [
+                {"stat": "STR", "value": 13},
+                {"stat": "DEX", "value": 10},
+                {"stat": "CON", "value": 12},
+                {"stat": "INT", "value": 7},
+                {"stat": "WIS", "value": 9},
+                {"stat": "CHA", "value": 9}
+            ]
+        },
+        {
+            "class" : "thief",
+            "stats": [
+                {"stat": "STR", "value": 9},
+                {"stat": "DEX", "value": 14},
+                {"stat": "CON", "value": 10},
+                {"stat": "INT", "value": 8},
+                {"stat": "WIS", "value": 7},
+                {"stat": "CHA", "value": 12}
+            ]
+        },
+        {
+            "class" : "wizard",
+            "stats": [
+                {"stat": "STR", "value": 7},
+                {"stat": "DEX", "value": 8},
+                {"stat": "CON", "value": 8},
+                {"stat": "INT", "value": 15},
+                {"stat": "WIS", "value": 12},
+                {"stat": "CHA", "value": 10}
+            ]
+        }
+    ]
+}
