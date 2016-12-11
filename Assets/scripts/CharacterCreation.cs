@@ -9,6 +9,7 @@ public class CharacterCreation : MonoBehaviour {
     const int MIN = 3;
 
     private Character main;
+    private Button createCharButton;
     private SpriteRenderer sr;
     private Sprite[][] spriteColl = new Sprite[2][];
     private Sprite[] spritesMale;
@@ -19,6 +20,7 @@ public class CharacterCreation : MonoBehaviour {
     void Start()
     {
         main = GameObject.FindObjectOfType<Game>().mainChar;
+        createCharButton = GameObject.Find("Button CreateChar").GetComponent<Button>();
         sr = GetComponent<SpriteRenderer>();
         spritesMale = Resources.LoadAll<Sprite>("CharacterCreation/Male");
         spritesFemale = Resources.LoadAll<Sprite>("CharacterCreation/Female");
@@ -65,10 +67,10 @@ public class CharacterCreation : MonoBehaviour {
     public void incStat(String stat)
     {
         int val = main.stats[stat];
-        if (val < MAX && main.spendablePoints > 0)
+        if (val < MAX && main.stats["Spendable"] > 0)
         {
             main.stats[stat]++;
-            main.spendablePoints--;
+            main.stats["Spendable"]--;
         }
     }
 
@@ -78,7 +80,7 @@ public class CharacterCreation : MonoBehaviour {
         if (val > MIN)
         {
             main.stats[stat]--;
-            main.spendablePoints++;
+            main.stats["Spendable"]++;
         }
     }
 
@@ -90,6 +92,16 @@ public class CharacterCreation : MonoBehaviour {
             charNameInput.Select();
         } else {
 
+        }
+    }
+
+    void Update()
+    {
+        if(main.charName != "" && main.stats["Spendable"] == 0)
+        {
+            createCharButton.interactable = true;
+        } else {
+            createCharButton.interactable = false;
         }
     }
 }
